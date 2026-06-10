@@ -49,10 +49,12 @@
 #define ARRAY_SIZE(a) std_size(a)
 
 // Disable raytracing support on macOS and iOS due to MoltenVK limitations.
+#ifndef VULKAN_RAYTRACING_ENABLED
 #if !(defined(MACOS_ENABLED) || defined(IOS_ENABLED))
 #define VULKAN_RAYTRACING_ENABLED 1
 #else
 #define VULKAN_RAYTRACING_ENABLED 0
+#endif
 #endif
 
 #define PRINT_NATIVE_COMMANDS 0
